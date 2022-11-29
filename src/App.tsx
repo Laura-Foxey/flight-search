@@ -13,6 +13,7 @@ function App() {
         </section>
       </header>
       <body>
+        <Searchbar />
         <Booking />
       </body>
       <footer>
