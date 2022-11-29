@@ -8,8 +8,13 @@ function App() {
       <header className="App-header">
         <img src="./img/logo.jpg" alt="logo"/>
         <h1> Flight search </h1>
-        <Searchbar />
       </header>
+      <body>
+        <Searchbar />
+      </body>
+      <footer>
+        
+      </footer>
     </div>
   );
 }

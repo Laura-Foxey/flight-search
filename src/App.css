@@ -1,4 +1,14 @@
-.App {
+* {
   text-align: center;
+  box-sizing: border-box;
 }
 
+:root {
+  --background-color: #b0ffff;
+  --box-color: #feffff;
+
+}
+
+body {
+  background-color: var(--background-color);
+}
