@@ -1,0 +1,17 @@
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booking-form__form {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+
+
+

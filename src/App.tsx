@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Booking from './Booking';
 import Searchbar from "./Searchbar"
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         </section>
       </header>
       <body>
-        <Searchbar />
+        <Booking />
       </body>
       <footer>
 

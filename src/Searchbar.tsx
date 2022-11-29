@@ -90,14 +90,14 @@ function Searchbar() {
         <div className="search__passengers">
           <p> Passengers: </p>
           <section className="search__passengers__section">
-            <AiFillMinusCircle style={{fontSize: "180%", color: "#be4bdb"}} onClick={() => decrementLimit("adult")}/>
+            <AiFillMinusCircle style={{fontSize: "180%", color: "#be4bdb", cursor: 'pointer'}} onClick={() => decrementLimit("adult")}/>
             <p> {adults} Adults(12+) </p>
-            <AiFillPlusCircle style={{fontSize: "180%", color: "#be4bdb"}} onClick={() => setAdults(prev => prev + 1)}/>
+            <AiFillPlusCircle style={{fontSize: "180%", color: "#be4bdb", cursor: 'pointer'}} onClick={() => setAdults(prev => prev + 1)}/>
           </section>
           <section className="search__passengers__section">
-            <AiFillMinusCircle style={{fontSize: "180%", color: "#be4bdb"}} onClick={() => decrementLimit("child")}/>
+            <AiFillMinusCircle style={{fontSize: "180%", color: "#be4bdb", cursor: 'pointer'}} onClick={() => decrementLimit("child")}/>
             <p> {children} Children(0-12) </p>
-            <AiFillPlusCircle style={{fontSize: "180%", color: "#be4bdb"}} onClick={() => setChildren(prev => prev + 1)}/>
+            <AiFillPlusCircle style={{fontSize: "180%", color: "#be4bdb", cursor: 'pointer'}} onClick={() => setChildren(prev => prev + 1)}/>
           </section>
         </div>
 
