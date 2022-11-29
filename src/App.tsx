@@ -6,8 +6,10 @@ function App() {
   return (
     <>
       <header className="App-header">
-        <img src="./img/logo.jpg" alt="logo"/>
-        <h1> Flight search </h1>
+        <section>
+          <img src={require('./img/logo.jpg')} alt="logo"/>
+          <h1> Flight search </h1>
+        </section>
       </header>
       <body>
         <Searchbar />

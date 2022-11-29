@@ -12,3 +12,13 @@
 body {
   background-color: var(--background-color);
 }
+
+header section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header img {
+  width: 100px;
+}
