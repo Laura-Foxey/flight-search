@@ -4,15 +4,68 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2% 0;
+}
+
+.search input {
+  width: 100%;
+  background-color: var(--box-color);
+}
+
+.search__box{
+  width: 60%;
+  border-style: solid;
+  border-radius: 8px;
+  margin: 3%;
+}
+
+.invalid {
+  pointer-events: none;
+
+}
+
+
+.search__traveltype {
+  width: 60%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.search__traveltype p {
+  width: 100%;
+  background-color: var(--box-color);
+  margin: 0;
+  border-style: solid;
+  border-width: 0.5px;
+}
+
+
+.search__passengers {
+  width: 60%;
+  margin: 3%;
 }
 
 .search__passengers__section{
+  background-color: var(--box-color);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-style: solid;
 }
 
 .search__passengers__section p{
+  
   width: 10vw;
 }
+
+
+.search__slider {
+  position:relative;
+}
+
+

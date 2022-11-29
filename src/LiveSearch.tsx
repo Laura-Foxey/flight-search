@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./App.css";
-import "react-datepicker/dist/react-datepicker.css";
+import "./Searchbar";
+import { Input } from '@mantine/core';
 
 
 interface Props {
@@ -18,14 +18,13 @@ function LiveSearch({ placeholder, data, datavalue, setValue }: Props) {
   };
 
   return (
-    <div className="Searchbar-direction__section">
-      <input
-        className="Searchbar-direction__section__searchbox"
+    <div className="search__box__input" >
+      <Input
         type="text"
         placeholder={placeholder}
         onFocus={() => setFocus(true)}
         value={datavalue}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(event: any) => setValue(event.currentTarget.value)}
       />
       {focus &&
         data
@@ -36,7 +35,6 @@ function LiveSearch({ placeholder, data, datavalue, setValue }: Props) {
             ) {
               return d;
             }
-            return d;
           })
           .map((d) => {
             return (
