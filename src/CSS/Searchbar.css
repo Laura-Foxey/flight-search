@@ -19,11 +19,15 @@
   margin: 3%;
 }
 
+.search__box p{
+  margin: 3px;
+  
+}
+
 .invalid {
   pointer-events: none;
 
 }
-
 
 .search__traveltype {
   width: 60%;
