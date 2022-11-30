@@ -10,4 +10,9 @@ public class Flights
     public string arrivalDestination { get; set; } = string.Empty;
 
     public List<Itineraries> itineraries { get; set; } = new List<Itineraries> ();
+
+    public Flights Clone()
+    {
+        return (Flights)this.MemberwiseClone();
+    }
 }

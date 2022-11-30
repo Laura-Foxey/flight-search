@@ -21,7 +21,7 @@ public class FlightsController : ControllerBase
     [Route("flights")]
     public ActionResult GetByParams(string departure, string destination, DateTime date)
     {
-        var flight = FindFlight(departure, destination, date);
+        var flight = _access.GetFlight(departure, destination, date);
         if (flight == null) return NotFound();
         return Ok(flight);
     }
@@ -29,9 +29,11 @@ public class FlightsController : ControllerBase
 
     [HttpPatch]
     [Route("flights/{id}")]
-    public Flights UpdateSeats(string departure, string destination, int id, int passangers)
+    public ActionResult UpdateSeats(string departure, string destination, int id, int passangers)
     {
-        var flight = FindFlight(departure, destination, date);
+        var res = _access.ReserveSeats(departure, destination, id, passangers);
+        if (!res) return NotFound();
+        return Ok();
 
     }
 }

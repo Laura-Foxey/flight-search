@@ -1,759 +1,1083 @@
 [
-    {
-        "flight_id": "S83195",
-        "departureDestination": "Stockholm",
-        "arrivalDestination": "Oslo",
-        "itineraries": [
-            {
-                "itinerary_id": "1",
-                "departureAt": "2022-12-12T12:30:00",
-                "arriveAt": "2022-12-12T13:30:00",
-                "avaliableSeats": 2,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "2",
-                "departureAt": "2022-12-12T15:30:00",
-                "arriveAt": "2022-12-12T16:30:00",
-                "avaliableSeats": 5,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "3",
-                "departureAt": "2022-12-12T18:30:00",
-                "arriveAt": "2022-12-12T19:30:00",
-                "avaliableSeats": 0,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "4",
-                "departureAt": "2022-12-12T21:30:00",
-                "arriveAt": "2022-12-12T22:30:00",
-                "avaliableSeats": 20,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "5",
-                "departureAt": "2022-12-13T12:30:00",
-                "arriveAt": "2022-12-13T13:30:00",
-                "avaliableSeats": 1,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "6",
-                "departureAt": "2022-12-13T15:30:00",
-                "arriveAt": "2022-12-13T16:30:00",
-                "avaliableSeats": 53,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "7",
-                "departureAt": "2022-12-13T18:30:00",
-                "arriveAt": "2022-12-13T19:30:00",
-                "avaliableSeats": 50,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "8",
-                "departureAt": "2022-12-13T21:30:00",
-                "arriveAt": "2022-12-13T22:30:00",
-                "avaliableSeats": 15,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "9",
-                "departureAt": "2022-12-14T12:30:00",
-                "arriveAt": "2022-12-14T13:30:00",
-                "avaliableSeats": 1,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "10",
-                "departureAt": "2022-12-14T15:30:00",
-                "arriveAt": "2022-12-14T16:30:00",
-                "avaliableSeats": 53,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "11",
-                "departureAt": "2022-12-14T18:30:00",
-                "arriveAt": "2022-12-14T19:30:00",
-                "avaliableSeats": 50,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "12",
-                "departureAt": "2022-12-14T21:30:00",
-                "arriveAt": "2022-12-14T22:30:00",
-                "avaliableSeats": 0,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "13",
-                "departureAt": "2022-12-15T12:30:00",
-                "arriveAt": "2022-12-15T13:30:00",
-                "avaliableSeats": 1,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "14",
-                "departureAt": "2022-12-15T15:30:00",
-                "arriveAt": "2022-12-15T16:30:00",
-                "avaliableSeats": 53,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "15",
-                "departureAt": "2022-12-15T18:30:00",
-                "arriveAt": "2022-12-15T19:30:00",
-                "avaliableSeats": 50,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "16",
-                "departureAt": "2022-12-15T21:30:00",
-                "arriveAt": "2022-12-15T22:30:00",
-                "avaliableSeats": 0,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "17",
-                "departureAt": "2022-12-16T12:30:00",
-                "arriveAt": "2022-12-16T13:30:00",
-                "avaliableSeats": 10,
-                "prices": [
-                    {"currency": "SEK", "adult": 2000, "child": 500}
-                ]
-            },
-            {
-                "itinerary_id": "18",
-                "departureAt": "2022-12-16T15:30:00",
-                "arriveAt": "2022-12-16T16:30:00",
-                "avaliableSeats": 5,
-                "prices": [
-                    {"currency": "SEK", "adult": 2300, "child": 550}
-                ]
-            },
-            {
-                "itinerary_id": "19",
-                "departureAt": "2022-12-16T18:30:00",
-                "arriveAt": "2022-12-16T19:30:00",
-                "avaliableSeats": 30,
-                "prices": [
-                    {"currency": "SEK", "adult": 2330, "child": 550}
-                ]
-            },
-            {
-                "itinerary_id": "20",
-                "departureAt": "2022-12-16T21:30:00",
-                "arriveAt": "2022-12-16T22:30:00",
-                "avaliableSeats": 2,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 400}
-                ]
-            },
-            {
-                "itinerary_id": "21",
-                "departureAt": "2022-12-17T18:30:00",
-                "arriveAt": "2022-12-17T19:30:00",
-                "avaliableSeats": 3,
-                "prices": [
-                    {"currency": "SEK", "adult": 3000, "child": 700}
-                ]
-            },
-            {
-                "itinerary_id": "22",
-                "departureAt": "2022-12-17T21:30:00",
-                "arriveAt": "2022-12-17T22:30:00",
-                "avaliableSeats": 10,
-                "prices": [
-                    {"currency": "SEK", "adult": 2300, "child": 400}
-                ]
-            },
-            {
-                "itinerary_id": "23",
-                "departureAt": "2022-12-18T12:30:00",
-                "arriveAt": "2022-12-18T13:30:00",
-                "avaliableSeats": 10,
-                "prices": [
-                    {"currency": "SEK", "adult": 3400, "child": 800}
-                ]
-            },
-            {
-                "itinerary_id": "24",
-                "departureAt": "2022-12-18T15:30:00",
-                "arriveAt": "2022-12-18T16:30:00",
-                "avaliableSeats": 1,
-                "prices": [
-                    {"currency": "SEK", "adult": 3700, "child": 770}
-                ]
-            },
-            {
-                "itinerary_id": "25",
-                "departureAt": "2022-12-18T18:30:00",
-                "arriveAt": "2022-12-18T19:30:00",
-                "avaliableSeats": 40,
-                "prices": [
-                    {"currency": "SEK", "adult": 4000, "child": 800}
-                ]
-            },
-            {
-                "itinerary_id": "26",
-                "departureAt": "2022-12-18T21:30:00",
-                "arriveAt": "2022-12-18T22:30:00",
-                "avaliableSeats": 5,
-                "prices": [
-                    {"currency": "SEK", "adult": 2200, "child": 300}
-                ]
-            }
+  {
+    "flight_id": "S83195",
+    "departureDestination": "Stockholm",
+    "arrivalDestination": "Oslo",
+    "itineraries": [
+      {
+        "itinerary_id": 1,
+        "departureAt": "2022-12-12T12:30:00",
+        "arriveAt": "2022-12-12T13:30:00",
+        "avaliableSeats": 2,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
         ]
-    },
-    {
-        "flight_id": "B83195",
-        "departureDestination": "Oslo",
-        "arrivalDestination": "Stockholm",
-        "itineraries": [
-            {
-                "itinerary_id": "27",
-                "departureAt": "2022-12-12T11:00:00",
-                "arriveAt": "2022-12-12T12:00:00",
-                "avaliableSeats": 5,
-                "prices": [
-                    {"currency": "SEK", "adult": 1300, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "28",
-                "departureAt": "2022-12-12T13:00:00",
-                "arriveAt": "2022-12-12T14:00:00",
-                "avaliableSeats": 10,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "29",
-                "departureAt": "2022-12-12T16:00:00",
-                "arriveAt": "2022-12-12T17:00:00",
-                "avaliableSeats": 3,
-                "prices": [
-                    {"currency": "SEK", "adult": 1300, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "30",
-                "departureAt": "2022-12-12T22:00:00",
-                "arriveAt": "2022-12-12T23:00:00",
-                "avaliableSeats": 20,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "31",
-                "departureAt": "2022-12-13T14:00:00",
-                "arriveAt": "2022-12-13T15:00:00",
-                "avaliableSeats": 2,
-                "prices": [
-                    {"currency": "SEK", "adult": 2000, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "32",
-                "departureAt": "2022-12-14T14:00:00",
-                "arriveAt": "2022-12-14T15:00:00",
-                "avaliableSeats": 10,
-                "prices": [
-                    {"currency": "SEK", "adult": 2100, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "33",
-                "departureAt": "2022-12-15T14:00:00",
-                "arriveAt": "2022-12-15T15:00:00",
-                "avaliableSeats": 2,
-                "prices": [
-                    {"currency": "SEK", "adult": 2000, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "34",
-                "departureAt": "2022-12-16T14:00:00",
-                "arriveAt": "2022-12-16T15:00:00",
-                "avaliableSeats": 9,
-                "prices": [
-                    {"currency": "SEK", "adult": 2000, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "35",
-                "departureAt": "2022-12-17T14:00:00",
-                "arriveAt": "2022-12-17T15:00:00",
-                "avaliableSeats": 33,
-                "prices": [
-                    {"currency": "SEK", "adult": 1800, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "36",
-                "departureAt": "2022-12-18T14:00:00",
-                "arriveAt": "2022-12-18T15:00:00",
-                "avaliableSeats": 10,
-                "prices": [
-                    {"currency": "SEK", "adult": 1800, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "37",
-                "departureAt": "2022-12-19T22:00:00",
-                "arriveAt": "2022-12-19T23:00:00",
-                "avaliableSeats": 2,
-                "prices": [
-                    {"currency": "SEK", "adult": 3000, "child": 600}
-                ]
-            }
+      },
+      {
+        "itinerary_id": 2,
+        "departureAt": "2022-12-12T15:30:00",
+        "arriveAt": "2022-12-12T16:30:00",
+        "avaliableSeats": 5,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
         ]
-    },
-    {
-        "flight_id": "C83195",
-        "departureDestination": "Oslo",
-        "arrivalDestination": "Amsterdam",
-        "itineraries": [
-            {
-                "itinerary_id": "38",
-                "departureAt": "2022-12-12T12:30:00",
-                "arriveAt": "2022-12-12T14:00:00",
-                "avaliableSeats": 12,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "39",
-                "departureAt": "2022-12-12T15:30:00",
-                "arriveAt": "2022-12-12T17:00:00",
-                "avaliableSeats": 15,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "40",
-                "departureAt": "2022-12-12T18:30:00",
-                "arriveAt": "2022-12-12T20:00:00",
-                "avaliableSeats": 5,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "41",
-                "departureAt": "2022-12-12T21:30:00",
-                "arriveAt": "2022-12-12T23:00:00",
-                "avaliableSeats": 20,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "42",
-                "departureAt": "2022-12-13T12:30:00",
-                "arriveAt": "2022-12-13T14:00:00",
-                "avaliableSeats": 1,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "43",
-                "departureAt": "2022-12-13T15:30:00",
-                "arriveAt": "2022-12-13T17:00:00",
-                "avaliableSeats": 53,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "44",
-                "departureAt": "2022-12-13T18:30:00",
-                "arriveAt": "2022-12-13T20:00:00",
-                "avaliableSeats": 50,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "45",
-                "departureAt": "2022-12-13T21:30:00",
-                "arriveAt": "2022-12-13T23:00:00",
-                "avaliableSeats": 15,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "46",
-                "departureAt": "2022-12-14T12:30:00",
-                "arriveAt": "2022-12-14T14:00:00",
-                "avaliableSeats": 1,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "47",
-                "departureAt": "2022-12-14T15:30:00",
-                "arriveAt": "2022-12-14T17:00:00",
-                "avaliableSeats": 53,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "48",
-                "departureAt": "2022-12-14T18:30:00",
-                "arriveAt": "2022-12-14T20:00:00",
-                "avaliableSeats": 50,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "49",
-                "departureAt": "2022-12-14T21:30:00",
-                "arriveAt": "2022-12-14T23:00:00",
-                "avaliableSeats": 0,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "50",
-                "departureAt": "2022-12-15T12:30:00",
-                "arriveAt": "2022-12-15T14:00:00",
-                "avaliableSeats": 1,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "51",
-                "departureAt": "2022-12-15T15:30:00",
-                "arriveAt": "2022-12-15T17:00:00",
-                "avaliableSeats": 53,
-                "prices": [
-                    {"currency": "SEK", "adult": 1500, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "52",
-                "departureAt": "2022-12-15T18:30:00",
-                "arriveAt": "2022-12-15T20:00:00",
-                "avaliableSeats": 50,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "53",
-                "departureAt": "2022-12-15T21:30:00",
-                "arriveAt": "2022-12-15T23:00:00",
-                "avaliableSeats": 0,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "54",
-                "departureAt": "2022-12-16T12:30:00",
-                "arriveAt": "2022-12-16T14:00:00",
-                "avaliableSeats": 10,
-                "prices": [
-                    {"currency": "SEK", "adult": 2000, "child": 500}
-                ]
-            },
-            {
-                "itinerary_id": "55",
-                "departureAt": "2022-12-16T15:30:00",
-                "arriveAt": "2022-12-16T17:00:00",
-                "avaliableSeats": 5,
-                "prices": [
-                    {"currency": "SEK", "adult": 2300, "child": 550}
-                ]
-            },
-            {
-                "itinerary_id": "56",
-                "departureAt": "2022-12-16T18:30:00",
-                "arriveAt": "2022-12-16T20:00:00",
-                "avaliableSeats": 30,
-                "prices": [
-                    {"currency": "SEK", "adult": 2330, "child": 550}
-                ]
-            },
-            {
-                "itinerary_id": "57",
-                "departureAt": "2022-12-16T21:30:00",
-                "arriveAt": "2022-12-16T23:00:00",
-                "avaliableSeats": 2,
-                "prices": [
-                    {"currency": "SEK", "adult": 1900, "child": 400}
-                ]
-            },
-            {
-                "itinerary_id": "58",
-                "departureAt": "2022-12-17T18:30:00",
-                "arriveAt": "2022-12-17T20:00:00",
-                "avaliableSeats": 3,
-                "prices": [
-                    {"currency": "SEK", "adult": 3000, "child": 700}
-                ]
-            },
-            {
-                "itinerary_id": "59",
-                "departureAt": "2022-12-17T21:30:00",
-                "arriveAt": "2022-12-17T23:00:00",
-                "avaliableSeats": 10,
-                "prices": [
-                    {"currency": "SEK", "adult": 2300, "child": 400}
-                ]
-            },
-            {
-                "itinerary_id": "60",
-                "departureAt": "2022-12-18T12:30:00",
-                "arriveAt": "2022-12-18T14:00:00",
-                "avaliableSeats": 10,
-                "prices": [
-                    {"currency": "SEK", "adult": 3400, "child": 800}
-                ]
-            },
-            {
-                "itinerary_id": "61",
-                "departureAt": "2022-12-18T15:30:00",
-                "arriveAt": "2022-12-18T17:00:00",
-                "avaliableSeats": 1,
-                "prices": [
-                    {"currency": "SEK", "adult": 3700, "child": 770}
-                ]
-            },
-            {
-                "itinerary_id": "62",
-                "departureAt": "2022-12-18T18:30:00",
-                "arriveAt": "2022-12-18T20:00:00",
-                "avaliableSeats": 40,
-                "prices": [
-                    {"currency": "SEK", "adult": 4000, "child": 800}
-                ]
-            },
-            {
-                "itinerary_id": "63",
-                "departureAt": "2022-12-18T21:30:00",
-                "arriveAt": "2022-12-18T23:00:00",
-                "avaliableSeats": 5,
-                "prices": [
-                    {"currency": "SEK", "adult": 2200, "child": 300}
-                ]
-            }
+      },
+      {
+        "itinerary_id": 3,
+        "departureAt": "2022-12-12T18:30:00",
+        "arriveAt": "2022-12-12T19:30:00",
+        "avaliableSeats": 0,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
         ]
-    },
-    {
-        "flight_id": "A83195",
-        "departureDestination": "Amsterdam",
-        "arrivalDestination": "Oslo",
-        "itineraries": [
-            {
-                "itinerary_id": "64",
-                "departureAt": "2022-12-12T10:30:00",
-                "arriveAt": "2022-12-12T12:00:00",
-                "avaliableSeats": 12,
-                "prices": [
-                    {"currency": "SEK", "adult": 2222, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "65",
-                "departureAt": "2022-12-12T15:30:00",
-                "arriveAt": "2022-12-12T17:00:00",
-                "avaliableSeats": 53,
-                "prices": [
-                    {"currency": "SEK", "adult": 2333, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "66",
-                "departureAt": "2022-12-12T23:30:00",
-                "arriveAt": "2022-12-13T01:00:00",
-                "avaliableSeats": 30,
-                "prices": [
-                    {"currency": "SEK", "adult": 2000, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "67",
-                "departureAt": "2022-12-13T10:30:00",
-                "arriveAt": "2022-12-13T12:00:00",
-                "avaliableSeats": 3,
-                "prices": [
-                    {"currency": "SEK", "adult": 2000, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "68",
-                "departureAt": "2022-12-13T15:30:00",
-                "arriveAt": "2022-12-13T17:00:00",
-                "avaliableSeats": 3,
-                "prices": [
-                    {"currency": "SEK", "adult": 2333, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "69",
-                "departureAt": "2022-12-13T23:30:00",
-                "arriveAt": "2022-12-14T01:00:00",
-                "avaliableSeats": 12,
-                "prices": [
-                    {"currency": "SEK", "adult": 2333, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "70",
-                "departureAt": "2022-12-14T10:30:00",
-                "arriveAt": "2022-12-14T12:00:00",
-                "avaliableSeats": 1,
-                "prices": [
-                    {"currency": "SEK", "adult": 2333, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "71",
-                "departureAt": "2022-12-14T15:30:00",
-                "arriveAt": "2022-12-14T17:00:00",
-                "avaliableSeats": 5,
-                "prices": [
-                    {"currency": "SEK", "adult": 2333, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "72",
-                "departureAt": "2022-12-14T23:30:00",
-                "arriveAt": "2022-12-15T01:00:00",
-                "avaliableSeats": 5,
-                "prices": [
-                    {"currency": "SEK", "adult": 2333, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "73",
-                "departureAt": "2022-12-15T10:30:00",
-                "arriveAt": "2022-12-15T12:00:00",
-                "avaliableSeats": 11,
-                "prices": [
-                    {"currency": "SEK", "adult": 2000, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "74",
-                "departureAt": "2022-12-15T15:30:00",
-                "arriveAt": "2022-12-15T17:00:00",
-                "avaliableSeats": 3,
-                "prices": [
-                    {"currency": "SEK", "adult": 2000, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "75",
-                "departureAt": "2022-12-15T23:30:00",
-                "arriveAt": "2022-12-16T01:00:00",
-                "avaliableSeats": 50,
-                "prices": [
-                    {"currency": "SEK", "adult": 2000, "child": 325}
-                ]
-            },
-            {
-                "itinerary_id": "76",
-                "departureAt": "2022-12-16T10:30:00",
-                "arriveAt": "2022-12-16T12:00:00",
-                "avaliableSeats": 7,
-                "prices": [
-                    {"currency": "SEK", "adult": 2000, "child": 500}
-                ]
-            },
-            {
-                "itinerary_id": "77",
-                "departureAt": "2022-12-16T15:30:00",
-                "arriveAt": "2022-12-16T17:00:00",
-                "avaliableSeats": 5,
-                "prices": [
-                    {"currency": "SEK", "adult": 2300, "child": 550}
-                ]
-            },
-            {
-                "itinerary_id": "78",
-                "departureAt": "2022-12-16T23:30:00",
-                "arriveAt": "2022-12-17T01:00:00",
-                "avaliableSeats": 30,
-                "prices": [
-                    {"currency": "SEK", "adult": 2330, "child": 550}
-                ]
-            },
-            {
-                "itinerary_id": "79",
-                "departureAt": "2022-12-17T12:30:00",
-                "arriveAt": "2022-12-17T14:00:00",
-                "avaliableSeats": 9,
-                "prices": [
-                    {"currency": "SEK", "adult": 3333, "child": 900}
-                ]
-            },
-            {
-                "itinerary_id": "80",
-                "departureAt": "2022-12-17T23:30:00",
-                "arriveAt": "2022-12-18T01:00:00",
-                "avaliableSeats": 10,
-                "prices": [
-                    {"currency": "SEK", "adult": 2300, "child": 400}
-                ]
-            },
-            {
-                "itinerary_id": "81",
-                "departureAt": "2022-12-18T21:30:00",
-                "arriveAt": "2022-12-18T23:00:00",
-                "avaliableSeats": 33,
-                "prices": [
-                    {"currency": "SEK", "adult": 4000, "child": 800}
-                ]
-            }
+      },
+      {
+        "itinerary_id": 4,
+        "departureAt": "2022-12-12T21:30:00",
+        "arriveAt": "2022-12-12T22:30:00",
+        "avaliableSeats": 20,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
         ]
-    }
+      },
+      {
+        "itinerary_id": 5,
+        "departureAt": "2022-12-13T12:30:00",
+        "arriveAt": "2022-12-13T13:30:00",
+        "avaliableSeats": 1,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 6,
+        "departureAt": "2022-12-13T15:30:00",
+        "arriveAt": "2022-12-13T16:30:00",
+        "avaliableSeats": 53,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 7,
+        "departureAt": "2022-12-13T18:30:00",
+        "arriveAt": "2022-12-13T19:30:00",
+        "avaliableSeats": 50,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 8,
+        "departureAt": "2022-12-13T21:30:00",
+        "arriveAt": "2022-12-13T22:30:00",
+        "avaliableSeats": 15,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 9,
+        "departureAt": "2022-12-14T12:30:00",
+        "arriveAt": "2022-12-14T13:30:00",
+        "avaliableSeats": 1,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 10,
+        "departureAt": "2022-12-14T15:30:00",
+        "arriveAt": "2022-12-14T16:30:00",
+        "avaliableSeats": 53,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 11,
+        "departureAt": "2022-12-14T18:30:00",
+        "arriveAt": "2022-12-14T19:30:00",
+        "avaliableSeats": 50,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 12,
+        "departureAt": "2022-12-14T21:30:00",
+        "arriveAt": "2022-12-14T22:30:00",
+        "avaliableSeats": 0,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 13,
+        "departureAt": "2022-12-15T12:30:00",
+        "arriveAt": "2022-12-15T13:30:00",
+        "avaliableSeats": 1,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 14,
+        "departureAt": "2022-12-15T15:30:00",
+        "arriveAt": "2022-12-15T16:30:00",
+        "avaliableSeats": 53,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 15,
+        "departureAt": "2022-12-15T18:30:00",
+        "arriveAt": "2022-12-15T19:30:00",
+        "avaliableSeats": 50,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 16,
+        "departureAt": "2022-12-15T21:30:00",
+        "arriveAt": "2022-12-15T22:30:00",
+        "avaliableSeats": 0,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 17,
+        "departureAt": "2022-12-16T12:30:00",
+        "arriveAt": "2022-12-16T13:30:00",
+        "avaliableSeats": 10,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2000,
+            "child": 500
+          }
+        ]
+      },
+      {
+        "itinerary_id": 18,
+        "departureAt": "2022-12-16T15:30:00",
+        "arriveAt": "2022-12-16T16:30:00",
+        "avaliableSeats": 5,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2300,
+            "child": 550
+          }
+        ]
+      },
+      {
+        "itinerary_id": 19,
+        "departureAt": "2022-12-16T18:30:00",
+        "arriveAt": "2022-12-16T19:30:00",
+        "avaliableSeats": 30,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2330,
+            "child": 550
+          }
+        ]
+      },
+      {
+        "itinerary_id": 20,
+        "departureAt": "2022-12-16T21:30:00",
+        "arriveAt": "2022-12-16T22:30:00",
+        "avaliableSeats": 2,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 400
+          }
+        ]
+      },
+      {
+        "itinerary_id": 21,
+        "departureAt": "2022-12-17T18:30:00",
+        "arriveAt": "2022-12-17T19:30:00",
+        "avaliableSeats": 3,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 3000,
+            "child": 700
+          }
+        ]
+      },
+      {
+        "itinerary_id": 22,
+        "departureAt": "2022-12-17T21:30:00",
+        "arriveAt": "2022-12-17T22:30:00",
+        "avaliableSeats": 10,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2300,
+            "child": 400
+          }
+        ]
+      },
+      {
+        "itinerary_id": 23,
+        "departureAt": "2022-12-18T12:30:00",
+        "arriveAt": "2022-12-18T13:30:00",
+        "avaliableSeats": 10,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 3400,
+            "child": 800
+          }
+        ]
+      },
+      {
+        "itinerary_id": 24,
+        "departureAt": "2022-12-18T15:30:00",
+        "arriveAt": "2022-12-18T16:30:00",
+        "avaliableSeats": 1,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 3700,
+            "child": 770
+          }
+        ]
+      },
+      {
+        "itinerary_id": 25,
+        "departureAt": "2022-12-18T18:30:00",
+        "arriveAt": "2022-12-18T19:30:00",
+        "avaliableSeats": 40,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 4000,
+            "child": 800
+          }
+        ]
+      },
+      {
+        "itinerary_id": 26,
+        "departureAt": "2022-12-18T21:30:00",
+        "arriveAt": "2022-12-18T22:30:00",
+        "avaliableSeats": 5,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2200,
+            "child": 300
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flight_id": "B83195",
+    "departureDestination": "Oslo",
+    "arrivalDestination": "Stockholm",
+    "itineraries": [
+      {
+        "itinerary_id": 27,
+        "departureAt": "2022-12-12T11:00:00",
+        "arriveAt": "2022-12-12T12:00:00",
+        "avaliableSeats": 5,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1300,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 28,
+        "departureAt": "2022-12-12T13:00:00",
+        "arriveAt": "2022-12-12T14:00:00",
+        "avaliableSeats": 10,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 29,
+        "departureAt": "2022-12-12T16:00:00",
+        "arriveAt": "2022-12-12T17:00:00",
+        "avaliableSeats": 3,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1300,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 30,
+        "departureAt": "2022-12-12T22:00:00",
+        "arriveAt": "2022-12-12T23:00:00",
+        "avaliableSeats": 20,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 31,
+        "departureAt": "2022-12-13T14:00:00",
+        "arriveAt": "2022-12-13T15:00:00",
+        "avaliableSeats": 2,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2000,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 32,
+        "departureAt": "2022-12-14T14:00:00",
+        "arriveAt": "2022-12-14T15:00:00",
+        "avaliableSeats": 10,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2100,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 33,
+        "departureAt": "2022-12-15T14:00:00",
+        "arriveAt": "2022-12-15T15:00:00",
+        "avaliableSeats": 2,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2000,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 34,
+        "departureAt": "2022-12-16T14:00:00",
+        "arriveAt": "2022-12-16T15:00:00",
+        "avaliableSeats": 9,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2000,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 35,
+        "departureAt": "2022-12-17T14:00:00",
+        "arriveAt": "2022-12-17T15:00:00",
+        "avaliableSeats": 33,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1800,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 36,
+        "departureAt": "2022-12-18T14:00:00",
+        "arriveAt": "2022-12-18T15:00:00",
+        "avaliableSeats": 10,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1800,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 37,
+        "departureAt": "2022-12-19T22:00:00",
+        "arriveAt": "2022-12-19T23:00:00",
+        "avaliableSeats": 2,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 3000,
+            "child": 600
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flight_id": "C83195",
+    "departureDestination": "Oslo",
+    "arrivalDestination": "Amsterdam",
+    "itineraries": [
+      {
+        "itinerary_id": 38,
+        "departureAt": "2022-12-12T12:30:00",
+        "arriveAt": "2022-12-12T14:00:00",
+        "avaliableSeats": 12,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 39,
+        "departureAt": "2022-12-12T15:30:00",
+        "arriveAt": "2022-12-12T17:00:00",
+        "avaliableSeats": 15,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 40,
+        "departureAt": "2022-12-12T18:30:00",
+        "arriveAt": "2022-12-12T20:00:00",
+        "avaliableSeats": 5,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 41,
+        "departureAt": "2022-12-12T21:30:00",
+        "arriveAt": "2022-12-12T23:00:00",
+        "avaliableSeats": 20,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 42,
+        "departureAt": "2022-12-13T12:30:00",
+        "arriveAt": "2022-12-13T14:00:00",
+        "avaliableSeats": 1,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 43,
+        "departureAt": "2022-12-13T15:30:00",
+        "arriveAt": "2022-12-13T17:00:00",
+        "avaliableSeats": 53,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 44,
+        "departureAt": "2022-12-13T18:30:00",
+        "arriveAt": "2022-12-13T20:00:00",
+        "avaliableSeats": 50,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 45,
+        "departureAt": "2022-12-13T21:30:00",
+        "arriveAt": "2022-12-13T23:00:00",
+        "avaliableSeats": 15,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 46,
+        "departureAt": "2022-12-14T12:30:00",
+        "arriveAt": "2022-12-14T14:00:00",
+        "avaliableSeats": 1,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 47,
+        "departureAt": "2022-12-14T15:30:00",
+        "arriveAt": "2022-12-14T17:00:00",
+        "avaliableSeats": 53,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 48,
+        "departureAt": "2022-12-14T18:30:00",
+        "arriveAt": "2022-12-14T20:00:00",
+        "avaliableSeats": 50,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 49,
+        "departureAt": "2022-12-14T21:30:00",
+        "arriveAt": "2022-12-14T23:00:00",
+        "avaliableSeats": 0,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 50,
+        "departureAt": "2022-12-15T12:30:00",
+        "arriveAt": "2022-12-15T14:00:00",
+        "avaliableSeats": 1,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 51,
+        "departureAt": "2022-12-15T15:30:00",
+        "arriveAt": "2022-12-15T17:00:00",
+        "avaliableSeats": 53,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1500,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 52,
+        "departureAt": "2022-12-15T18:30:00",
+        "arriveAt": "2022-12-15T20:00:00",
+        "avaliableSeats": 50,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 53,
+        "departureAt": "2022-12-15T21:30:00",
+        "arriveAt": "2022-12-15T23:00:00",
+        "avaliableSeats": 0,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 54,
+        "departureAt": "2022-12-16T12:30:00",
+        "arriveAt": "2022-12-16T14:00:00",
+        "avaliableSeats": 10,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2000,
+            "child": 500
+          }
+        ]
+      },
+      {
+        "itinerary_id": 55,
+        "departureAt": "2022-12-16T15:30:00",
+        "arriveAt": "2022-12-16T17:00:00",
+        "avaliableSeats": 5,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2300,
+            "child": 550
+          }
+        ]
+      },
+      {
+        "itinerary_id": 56,
+        "departureAt": "2022-12-16T18:30:00",
+        "arriveAt": "2022-12-16T20:00:00",
+        "avaliableSeats": 30,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2330,
+            "child": 550
+          }
+        ]
+      },
+      {
+        "itinerary_id": 57,
+        "departureAt": "2022-12-16T21:30:00",
+        "arriveAt": "2022-12-16T23:00:00",
+        "avaliableSeats": 2,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 1900,
+            "child": 400
+          }
+        ]
+      },
+      {
+        "itinerary_id": 58,
+        "departureAt": "2022-12-17T18:30:00",
+        "arriveAt": "2022-12-17T20:00:00",
+        "avaliableSeats": 3,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 3000,
+            "child": 700
+          }
+        ]
+      },
+      {
+        "itinerary_id": 59,
+        "departureAt": "2022-12-17T21:30:00",
+        "arriveAt": "2022-12-17T23:00:00",
+        "avaliableSeats": 10,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2300,
+            "child": 400
+          }
+        ]
+      },
+      {
+        "itinerary_id": 60,
+        "departureAt": "2022-12-18T12:30:00",
+        "arriveAt": "2022-12-18T14:00:00",
+        "avaliableSeats": 10,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 3400,
+            "child": 800
+          }
+        ]
+      },
+      {
+        "itinerary_id": 61,
+        "departureAt": "2022-12-18T15:30:00",
+        "arriveAt": "2022-12-18T17:00:00",
+        "avaliableSeats": 1,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 3700,
+            "child": 770
+          }
+        ]
+      },
+      {
+        "itinerary_id": 62,
+        "departureAt": "2022-12-18T18:30:00",
+        "arriveAt": "2022-12-18T20:00:00",
+        "avaliableSeats": 40,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 4000,
+            "child": 800
+          }
+        ]
+      },
+      {
+        "itinerary_id": 63,
+        "departureAt": "2022-12-18T21:30:00",
+        "arriveAt": "2022-12-18T23:00:00",
+        "avaliableSeats": 5,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2200,
+            "child": 300
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flight_id": "A83195",
+    "departureDestination": "Amsterdam",
+    "arrivalDestination": "Oslo",
+    "itineraries": [
+      {
+        "itinerary_id": 64,
+        "departureAt": "2022-12-12T10:30:00",
+        "arriveAt": "2022-12-12T12:00:00",
+        "avaliableSeats": 12,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2222,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 65,
+        "departureAt": "2022-12-12T15:30:00",
+        "arriveAt": "2022-12-12T17:00:00",
+        "avaliableSeats": 53,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2333,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 66,
+        "departureAt": "2022-12-12T23:30:00",
+        "arriveAt": "2022-12-13T01:00:00",
+        "avaliableSeats": 30,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2000,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 67,
+        "departureAt": "2022-12-13T10:30:00",
+        "arriveAt": "2022-12-13T12:00:00",
+        "avaliableSeats": 3,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2000,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 68,
+        "departureAt": "2022-12-13T15:30:00",
+        "arriveAt": "2022-12-13T17:00:00",
+        "avaliableSeats": 3,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2333,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 69,
+        "departureAt": "2022-12-13T23:30:00",
+        "arriveAt": "2022-12-14T01:00:00",
+        "avaliableSeats": 12,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2333,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 70,
+        "departureAt": "2022-12-14T10:30:00",
+        "arriveAt": "2022-12-14T12:00:00",
+        "avaliableSeats": 1,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2333,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 71,
+        "departureAt": "2022-12-14T15:30:00",
+        "arriveAt": "2022-12-14T17:00:00",
+        "avaliableSeats": 5,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2333,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 72,
+        "departureAt": "2022-12-14T23:30:00",
+        "arriveAt": "2022-12-15T01:00:00",
+        "avaliableSeats": 5,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2333,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 73,
+        "departureAt": "2022-12-15T10:30:00",
+        "arriveAt": "2022-12-15T12:00:00",
+        "avaliableSeats": 11,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2000,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 74,
+        "departureAt": "2022-12-15T15:30:00",
+        "arriveAt": "2022-12-15T17:00:00",
+        "avaliableSeats": 3,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2000,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 75,
+        "departureAt": "2022-12-15T23:30:00",
+        "arriveAt": "2022-12-16T01:00:00",
+        "avaliableSeats": 50,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2000,
+            "child": 325
+          }
+        ]
+      },
+      {
+        "itinerary_id": 76,
+        "departureAt": "2022-12-16T10:30:00",
+        "arriveAt": "2022-12-16T12:00:00",
+        "avaliableSeats": 7,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2000,
+            "child": 500
+          }
+        ]
+      },
+      {
+        "itinerary_id": 77,
+        "departureAt": "2022-12-16T15:30:00",
+        "arriveAt": "2022-12-16T17:00:00",
+        "avaliableSeats": 5,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2300,
+            "child": 550
+          }
+        ]
+      },
+      {
+        "itinerary_id": 78,
+        "departureAt": "2022-12-16T23:30:00",
+        "arriveAt": "2022-12-17T01:00:00",
+        "avaliableSeats": 30,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2330,
+            "child": 550
+          }
+        ]
+      },
+      {
+        "itinerary_id": 79,
+        "departureAt": "2022-12-17T12:30:00",
+        "arriveAt": "2022-12-17T14:00:00",
+        "avaliableSeats": 9,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 3333,
+            "child": 900
+          }
+        ]
+      },
+      {
+        "itinerary_id": 80,
+        "departureAt": "2022-12-17T23:30:00",
+        "arriveAt": "2022-12-18T01:00:00",
+        "avaliableSeats": 10,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 2300,
+            "child": 400
+          }
+        ]
+      },
+      {
+        "itinerary_id": 81,
+        "departureAt": "2022-12-18T21:30:00",
+        "arriveAt": "2022-12-18T23:00:00",
+        "avaliableSeats": 33,
+        "prices": [
+          {
+            "currency": "SEK",
+            "adult": 4000,
+            "child": 800
+          }
+        ]
+      }
+    ]
+  }
 ]
