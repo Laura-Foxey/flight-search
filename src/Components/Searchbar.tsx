@@ -70,15 +70,14 @@ function Searchbar() {
     .then(res => res.json())
     .then(data => setFetched(data))
     .catch((error) => console.log('fetchToken error: ', error))
-    // if (ret === 'return') {
-    //   fetch(`https://localhost:7277/flights?departure=${origin}&destination=${destination}`)
-    //   .then(res => res.json())
-    //   .then(data => setTwoFetched(data))
-    //   .catch((error) => console.log('fetchToken error: ', error))
-    // }
+    if (ret === 'return') {
+      fetch(`https://localhost:7277/flights?departure=${destination}&destination=${origin}`)
+      .then(res => res.json())
+      .then(data => setTwoFetched(data))
+      .catch((error) => console.log('fetchToken error: ', error))
+    }
   }
 
-  console.log(error);
   return (
     <MantineProvider
       theme={{
@@ -143,7 +142,7 @@ function Searchbar() {
 
         <Button color="grape" radius="md" size="lg" onClick={() => search()}> Submit </Button>
       </div>
-      <Results inbound={fetched} outbound={twoFetched} />
+      <Results ret={ret} inbound={fetched} outbound={twoFetched} />
     </MantineProvider>
   );
 }

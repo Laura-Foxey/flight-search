@@ -1,0 +1,15 @@
+.search__results {
+  list-style-type: none;
+}
+
+.search__results li {
+  width: 30vw;
+  margin: 3%;
+  border-style: solid;
+}
+
+
+
+
+
+
