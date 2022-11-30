@@ -9,6 +9,7 @@ interface Props {
   datavalue: string;
   setValue: (value: string | ((prevVar: string) => string)) => void;
 }
+
 function LiveSearch({ placeholder, data, datavalue, setValue }: Props) {
   const [focus, setFocus] = useState(false);
 

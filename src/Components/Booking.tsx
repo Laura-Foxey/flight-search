@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './CSS/Booking.css';
+import '../CSS/Booking.css';
 import { Input, NativeSelect, Switch, Button, Checkbox} from '@mantine/core';
 
 function Booking() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Booking from './Booking';
-import Searchbar from "./Searchbar"
+import Booking from './Components/Booking';
+import Searchbar from "./Components/Searchbar"
 
 function App() {
   return (
@@ -14,7 +14,6 @@ function App() {
       </header>
       <body>
         <Searchbar />
-        <Booking />
       </body>
       <footer>
 

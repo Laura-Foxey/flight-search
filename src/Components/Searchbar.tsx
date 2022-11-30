@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import "./CSS/Searchbar.css"
+import "../CSS/Searchbar.css"
 import "react-datepicker/dist/react-datepicker.css";
 import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
 import LiveSearch from "./LiveSearch";
+import Results from './Results'
 import { DatePicker, DateRangePicker, DateRangePickerValue  } from '@mantine/dates';
 import { Button, RangeSlider, MantineProvider, SegmentedControl } from '@mantine/core';
 
 
 function Searchbar() {
-  const [date, setDate] =useState<DateRangePickerValue>([
+  const [days, setDays] =useState<DateRangePickerValue>([
     new Date(),
     new Date(),
   ]);
@@ -19,6 +20,9 @@ function Searchbar() {
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const [price, setPrice] = useState<[number, number]>([0, 5000]);
+  const [error, setError] = useState(false);
+  const [fetched, setFetched] = useState<[] | any>([]);
+  const [twoFetched, setTwoFetched] = useState<[] | any>([])
 
   const values = [
     {
@@ -47,6 +51,34 @@ function Searchbar() {
     return ;
   }
 
+  const checkValues = () => {
+    if (ret === 'return' && days[0] && days[1] && destination && origin) { 
+      return true
+    } 
+    else if (ret === 'oneway' && day && destination && origin) { 
+      return true
+    }
+    return false;
+  }
+
+  const search = () => {
+    if (!checkValues()) {
+      setError(true);
+      return ;
+    }
+    fetch(`https://localhost:7277/flights?departure=${origin}&destination=${destination}`)
+    .then(res => res.json())
+    .then(data => setFetched(data))
+    .catch((error) => console.log('fetchToken error: ', error))
+    // if (ret === 'return') {
+    //   fetch(`https://localhost:7277/flights?departure=${origin}&destination=${destination}`)
+    //   .then(res => res.json())
+    //   .then(data => setTwoFetched(data))
+    //   .catch((error) => console.log('fetchToken error: ', error))
+    // }
+  }
+
+  console.log(error);
   return (
     <MantineProvider
       theme={{
@@ -55,6 +87,7 @@ function Searchbar() {
         },
       }}
     >
+      {error && <p>Please provide all values</p> }
       <div className="search">
         <div className="search__traveltype">
           <SegmentedControl
@@ -63,7 +96,7 @@ function Searchbar() {
             value={ret}
             onChange={setRet}
             data={[
-              { label: 'One-way', value: 'one' },
+              { label: 'One-way', value: 'oneway' },
               { label: 'Return', value: 'return' },
             ]}
             />
@@ -80,11 +113,13 @@ function Searchbar() {
         { ret==='return' ?  <DateRangePicker
             label="Select dates"
             minDate={new Date()}
-            value={date}
-            onChange={setDate}
+            value={days}
+            onChange={setDays}
             clearable={false}
-          /> : <DatePicker label="Select date" minDate={new Date()} value={day} onChange={setDay} clearable={false}/> }
-          
+            inputFormat="YYYY/MM/DD"
+            labelFormat="YYYY/MM/DD"
+          /> : <DatePicker label="Select date"             inputFormat="YYYY/MM/DD"
+          labelFormat="YYYY/MM/DD" minDate={new Date()} value={day} onChange={setDay} clearable={false}/> }
         </div>
 
         <div className="search__passengers">
@@ -106,8 +141,9 @@ function Searchbar() {
             <RangeSlider labelAlwaysOn min={1} max={5000} thumbSize={27} marks={marks} value={price} onChange={setPrice} color="white"/>
         </div>
 
-        <Button color="grape" radius="md" size="lg"> Submit </Button>
+        <Button color="grape" radius="md" size="lg" onClick={() => search()}> Submit </Button>
       </div>
+      <Results inbound={fetched} outbound={twoFetched} />
     </MantineProvider>
   );
 }

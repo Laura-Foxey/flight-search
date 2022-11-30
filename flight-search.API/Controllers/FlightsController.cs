@@ -8,17 +8,16 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace flight_search.API.Controllers;
 
+
 [ApiController]
-[Route("api/[controller]")]
 public class FlightsController : ControllerBase
 {
     private readonly IWebHostEnvironment  _hostingEnvironment;
-
+    
      public FlightsController(IWebHostEnvironment hostingEnvironment)
     {
         _hostingEnvironment = hostingEnvironment;
     }
-
 
     // [HttpGet]
     // [Route("flights")]
@@ -66,9 +65,9 @@ public class FlightsController : ControllerBase
         return null;
     }
 
-    [HttpPut]
+    [HttpPatch]
     [Route("flights/{id}")]
-    public Flights UpdateSeats(string id, string passangers)
+    public Flights UpdateSeats(string id, int passangers)
     {
         var rootPath = _hostingEnvironment.ContentRootPath;
         var fullPath = Path.Combine(rootPath, "data.json");
@@ -77,8 +76,9 @@ public class FlightsController : ControllerBase
         if (string.IsNullOrWhiteSpace(jsonData)) return null;
         var flights = JsonConvert.DeserializeObject<List<Flights>>(jsonData);
         if (flights == null || flights.Count == 0) return null;
-        var flight = flights.FirstOrDefault(x => x.departureDestination == departure && x.arrivalDestination == destination);
-        if (flight != null) return flight;
+        var flight = flights.FirstOrDefault(x => x.flight_id == id);
+        if (flight == null) return null;
+        flight.itineraries[0].avaliableSeats = passangers;
         return null;
     }
 }

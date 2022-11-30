@@ -1,8 +1,7 @@
 import React from 'react';
-import './App.css';
 
 
-function Results() {
+function Confirmation() {
   return (
     <>
       
@@ -10,4 +9,4 @@ function Results() {
   );
 }
 
-export default Results;
+export default Confirmation;
