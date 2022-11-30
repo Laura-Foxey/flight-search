@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 public class Prices
 {
 
-    public string currency { get; set; }
+    public string currency { get; set; } = string.Empty;
 
     public int adult { get; set; }
 

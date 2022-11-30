@@ -12,7 +12,7 @@ public class Itineraries
 
     public int avaliableSeats { get; set; }
     
-    public List<Prices> prices { get; set; }
+    public List<Prices> prices { get; set; } = new List<Prices> ();
 
     
 }
