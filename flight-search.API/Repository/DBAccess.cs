@@ -20,7 +20,7 @@ namespace flight_search.API.Repository
 
         public Flights GetFlight(string departure, string destination, DateTime date)
         {
-            var flight = flights.FirstOrDefault(x => x.departureDestination == departure && x.arrivalDestination == destination && x.itineraries.Any(y => y.departureAt.Date == date.Date));
+            var flight = flights?.FirstOrDefault(x => x.departureDestination == departure && x.arrivalDestination == destination && x.itineraries.Any(y => y.departureAt.Date == date.Date));
             if (flight == null) return null;
             var copy = flight.Clone();
             copy.itineraries = copy.itineraries.Where(y => y.departureAt.Date == date.Date).ToList();
@@ -29,9 +29,9 @@ namespace flight_search.API.Repository
 
         public bool ReserveSeats(string departure, string destination, int id, int passangers)
         {
-            var flight = flights.FirstOrDefault(x => x.departureDestination == departure && x.arrivalDestination == destination);
-            var itinerary = flight.itineraries.FirstOrDefault(x => x.itinerary_id == id);
-            if (itinerary.avaliableSeats < passangers) return false;
+            var flight = flights?.FirstOrDefault(x => x.departureDestination == departure && x.arrivalDestination == destination);
+            var itinerary = flight?.itineraries.FirstOrDefault(x => x.itinerary_id == id);
+            if (itinerary?.avaliableSeats < passangers) return false;
             itinerary.avaliableSeats -= passangers;
             var jsonData = JsonConvert.SerializeObject(flights, Formatting.Indented);
             File.WriteAllText(_fullPath, jsonData);
