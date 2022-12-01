@@ -1,18 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../CSS/Booking.css';
 import { Input, NativeSelect, Switch, Button, Checkbox} from '@mantine/core';
+import { useNavigate } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 function Booking() {
-  const [passengers, setPassengers] = useState<Array<{ id: number, name: string, email: string, nationality: string, over18: boolean}>>([]);
+  const [searchParams] = useSearchParams();
+  const [passengers, setPassengers] = useState<Array<{ id: number, name: string, email: string, nationality: string, notChild: boolean}>>([]);
   const [number, setNumber] = useState(1);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [nationality, setNationality] = useState('');
-  const [over18, setover18] = useState(false);
+  const [notChild, setnotChild] = useState(false);
   const [checked, setChecked] = useState(false);
   const [error, setError] =useState('');
+  const navigate = useNavigate();
 
-  console.log(passengers);
+  //book?to=id&from=id&adults=1&children=1
+  const to = searchParams.get('flight');
+  const from = searchParams.get('return');
+  const adults = searchParams.get('adults');
+  const children = searchParams.get('children');
+  let totalPassengers = 0;
+
+  if(adults && children) {totalPassengers = parseInt(adults) + parseInt(children)}
+
+  useEffect(() => {
+    
+  }, [])
 
   const addPassenger = (e: any) => {
     e.preventDefault();
@@ -24,16 +39,16 @@ function Booking() {
         setError("Please add a valid email.") 
         return; 
       }
-      if (number === 1 && !over18) {
+      if (number === 1 && !notChild) {
         setError("Please have the first passanger to be a legal adult.") 
         return; 
       }
-      setPassengers((prev) => [...prev, {id: number, name: name, email: email, nationality: nationality, over18: over18}])
+      setPassengers((prev) => [...prev, {id: number, name: name, email: email, nationality: nationality, notChild: notChild}])
       setNumber(prev => prev + 1);
       setName('') 
       setEmail('')
       setNationality('')
-      setover18(false);
+      setnotChild(false);
       setChecked(false);
       setError('')
       return ;
@@ -46,40 +61,54 @@ function Booking() {
 
   return (
     <div className="booking-form">
-      <p> Add passenger {number} of {}</p>
-      <p style={{color: 'red'}}>{error}</p>
-      <form className="booking-form__form" onSubmit={addPassenger}>
-        <Input.Wrapper id="Name" label="Passenger name" required>
-          <Input placeholder="Full name" value={name} onChange={(e: any) => setName(e.target.value)}/>
-        </Input.Wrapper>
+      <section>
+        <ul>
+          {passengers.map((passenger) => 
+          <li key={passenger.id}>
+            <p>{passenger.name}</p>
+            <p>{passenger.email}</p>
+            <p>{passenger.nationality}</p>
+          </li>)}
+        </ul>
+      </section>
 
-        <Input.Wrapper id="Email" label="Email address" required>
-          <Input placeholder="Email" value={email} onChange={(e: any) => setEmail(e.target.value)}/>
-        </Input.Wrapper>
+      <div>
+        <p> Add passenger {number} of {totalPassengers}</p>
+        <p style={{color: 'red'}}>{error}</p>
+        <form className="booking-form__form" onSubmit={addPassenger}>
+          <Input.Wrapper id="Name" label="Passenger name" required>
+            <Input placeholder="Full name" value={name} onChange={(e: any) => setName(e.target.value)}/>
+          </Input.Wrapper>
 
-        <NativeSelect
-          data={['ID', 'Passport', 'National ID', 'Driver License']}
-          label="Select what document you will be traveling with"
-          description="Make sure the document is not expired else you can be denied boarding"
-          value={nationality}
-          onChange={(event) => setNationality(event.currentTarget.value)}
-          required
-        />
+          <Input.Wrapper id="Email" label="Email address" required>
+            <Input placeholder="Email" value={email} onChange={(e: any) => setEmail(e.target.value)}/>
+          </Input.Wrapper>
 
-        <Switch
-          label="Passenger is over 18 years old"
-          checked={over18} onChange={(event) => setover18(event.currentTarget.checked)}
-          onLabel="YES" offLabel="NO"
-        />
+          <NativeSelect
+            data={['ID', 'Passport', 'National ID', 'Driver License']}
+            label="Select what document you will be traveling with"
+            description="Make sure the document is not expired else you can be denied boarding"
+            value={nationality}
+            onChange={(event) => setNationality(event.currentTarget.value)}
+            required
+          />
 
-        <Checkbox
-          mt="md"
-          label="I have read the terms and conditions."
-          checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)}
-        />
+          <Switch
+            label="Passenger is over 12 years old"
+            checked={notChild} onChange={(event) => setnotChild(event.currentTarget.checked)}
+            onLabel="YES" offLabel="NO"
+          />
 
-        <Button type="submit"> Add passenger </Button>
-      </form>
+          <Checkbox
+            mt="md"
+            label="I have read the terms and conditions."
+            checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)}
+          />
+
+          <Button type="submit"> Add passenger </Button>
+        </form>
+        {passengers.length === 5 && <Button> Review booking</Button>}
+        </div>
     </div>
   );
 }

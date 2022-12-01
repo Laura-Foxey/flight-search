@@ -1,3 +1,7 @@
+.searchpage {
+  display: flex;
+}
+
 .search {
   background-color: #7c24cc;
   width: 30vw;
@@ -6,6 +10,8 @@
   align-items: center;
   padding: 2% 0;
 }
+
+
 
 .search input {
   width: 100%;

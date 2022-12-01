@@ -27,17 +27,32 @@ namespace flight_search.API.Repository
             return copy;
         }
 
+        public Flights GetByID(int id)
+        {
+            var flight = new Flights();
+            var itinerary = new Itineraries();
+            foreach(var f in flights)
+            {
+                itinerary = f.itineraries.FirstOrDefault(x => x.itinerary_id == id);
+                if (itinerary != null) {
+                    flight = f;
+                    break ;
+                }
+            }
+            if (itinerary == null) return null;
+            flight.itineraries = new List<Itineraries>{itinerary};
+            return flight;
+        }
+
         public bool ReserveSeats(string departure, string destination, int id, int passangers)
         {
             var flight = flights?.FirstOrDefault(x => x.departureDestination == departure && x.arrivalDestination == destination);
             var itinerary = flight?.itineraries.FirstOrDefault(x => x.itinerary_id == id);
-            if (itinerary?.avaliableSeats < passangers) return false;
+            if (itinerary?.avaliableSeats < passangers || itinerary == null) return false;
             itinerary.avaliableSeats -= passangers;
             var jsonData = JsonConvert.SerializeObject(flights, Formatting.Indented);
             File.WriteAllText(_fullPath, jsonData);
             return true;
         }
-
-
     }
 }

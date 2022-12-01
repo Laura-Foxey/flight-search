@@ -1,23 +1,19 @@
 import React from 'react';
-import './App.css';
 import Booking from './Components/Booking';
+import Header from './Components/Header';
 import Searchbar from "./Components/Searchbar"
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
     <>
-      <header className="App-header">
-        <section>
-          <img src={require('./img/logo.jpg')} alt="logo"/>
-          <h1> Flight search </h1>
-        </section>
-      </header>
-      <body>
-        <Searchbar />
-      </body>
-      <footer>
+    <Header />  
+    <Routes>
+      <Route path="/" element={<Searchbar />} />
+      <Route path="book" element={<Booking/>} />
 
-      </footer>
+    </Routes>
     </>
   );
 }
