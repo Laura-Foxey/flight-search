@@ -18,7 +18,7 @@ namespace flight_search.API.Repository
             else flights = JsonConvert.DeserializeObject<List<Flights>>(jsonData);
         }
 
-        public Flights GetFlight(string departure, string destination, DateTime date)
+        public Flights? GetFlight(string departure, string destination, DateTime date)
         {
             var flight = flights?.FirstOrDefault(x => x.departureDestination == departure && x.arrivalDestination == destination && x.itineraries.Any(y => y.departureAt.Date == date.Date));
             if (flight == null) return null;
@@ -27,10 +27,11 @@ namespace flight_search.API.Repository
             return copy;
         }
 
-        public Flights GetByID(int id)
+        public Flights? GetByID(int id)
         {
             var flight = new Flights();
             var itinerary = new Itineraries();
+            if (flights == null) return null;
             foreach(var f in flights)
             {
                 itinerary = f.itineraries.FirstOrDefault(x => x.itinerary_id == id);
