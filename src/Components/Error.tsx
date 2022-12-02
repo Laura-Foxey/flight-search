@@ -1,0 +1,12 @@
+import React from 'react';
+import "../CSS/App.css"
+
+function Error() {
+  return (
+      <>
+        <p> Something went wrong!</p>
+      </>
+  );
+}
+
+export default Error;

@@ -2,9 +2,9 @@ using flight_search.API.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.ConfigureKestrel(c =>
+builder.WebHost.UseKestrel(c =>
 {
-   c.Limits.KeepAliveTimeout = TimeSpan.FromSeconds(3);
+    c.Limits.KeepAliveTimeout = TimeSpan.FromSeconds(3);
 });
 
 builder.Services.AddControllers();
@@ -31,4 +31,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-

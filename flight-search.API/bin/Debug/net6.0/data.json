@@ -73,7 +73,7 @@
         "itinerary_id": 6,
         "departureAt": "2022-12-13T15:30:00",
         "arriveAt": "2022-12-13T16:30:00",
-        "avaliableSeats": 53,
+        "avaliableSeats": 52,
         "prices": [
           {
             "currency": "SEK",

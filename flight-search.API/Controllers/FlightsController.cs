@@ -19,30 +19,52 @@ public class FlightsController : ControllerBase
 
     [HttpGet]
     [Route("flights")]
-    public IActionResult GetByParams(string departure, string destination, DateTime date)
+    public async Task<IActionResult> GetByParams(string departure, string destination, DateTime date)
     {
-        var flight = _access.GetFlight(departure, destination, date);
-        Thread.Sleep(5000);
-        if (flight == null) return NotFound();
-        return Ok(flight);
+        try 
+        {
+            var flight = await Task.Run(() => _access.GetFlight(departure, destination, date)).WaitAsync(TimeSpan.FromSeconds(3));
+
+            if (flight == null) return NotFound();
+            return Ok(flight);
+        }
+        catch (TimeoutException)
+        {
+            return new StatusCodeResult(408);
+        }
+
     }
 
     [HttpGet]
     [Route("flights/itinerary/{id}")]
-    public IActionResult GetFlight(int id)
+    public async Task<IActionResult> GetFlight(int id)
     {
-        var flight = _access.GetByID(id);
-        if (flight == null) return NotFound();
-        return Ok(flight);
+        try
+        {
+            var flight = await Task.Run(() => _access.GetByID(id)).WaitAsync(TimeSpan.FromSeconds(3));
+            if (flight == null) return NotFound();
+            return Ok(flight);
+        }
+        catch (TimeoutException) 
+        {
+            return new StatusCodeResult(408);
+        }
     }
 
 
     [HttpPatch]
     [Route("flights/{id}")]
-    public IActionResult UpdateSeats(string departure, string destination, int id, int passangers)
+    public async Task<IActionResult> UpdateSeats(string departure, string destination, int id, int passangers)
     {
-        var res = _access.ReserveSeats(departure, destination, id, passangers);
-        if (!res) return StatusCode(405);
-        return Ok();
+        try
+        {
+            var res = await Task.Run(() => _access.ReserveSeats(departure, destination, id, passangers)).WaitAsync(TimeSpan.FromSeconds(3));
+            if (!res) return StatusCode(405);
+            return Ok();
+        }
+        catch(TimeoutException)
+        {
+            return new StatusCodeResult(408);
+        }
     }
 }
