@@ -1,7 +1,8 @@
-import React, {useState, SetStateAction} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import "../CSS/Results.css"
 import { Button} from '@mantine/core';
+import ResultsCard from './ResultsCard'
 
 interface Props {
   inbound: {
@@ -13,6 +14,7 @@ interface Props {
       departureAt: Date,
       arriveAt: Date,
       avaliableSeats: number,
+      expanded: boolean,
       prices: {
         currency: string,
         adult: number,
@@ -21,53 +23,30 @@ interface Props {
     }[]
   }
   title: string,
-  setSaved: any
-
+  saved: string[],
+  setSaved: any,
+  seats: number,
+  limit: number
 }
 
-function Results({inbound, title, setSaved}: Props) {
-  const [close, setClose] = useState(false);
-
-    //caculates hours it takes for flight 
-  const calculateTime = (dt1: Date, dt2: Date) => {
-    var diff =(new Date(dt2).getTime() - new Date(dt1).getTime()) / 1000;
-    diff /= (60 * 60);
-    return Math.abs(Math.round(diff));
-  }
-
-
-  const saveSelection = (id: number) => {
-    const saved = inbound.itineraries.find(x => x.itinerary_id === id);
-    if(saved) {
-      setSaved((prev: any) => [...prev, saved.itinerary_id.toString()])
-      setClose(true);
-    }
-  }
+function Results({inbound, title, saved, setSaved, seats, limit}: Props) {
 
   if (!inbound.itineraries) { return (<></>)}
 
-  if(close) {return (<> Flight selected </>)}
+  if (saved.length === limit) {return (<> Flight {inbound.departureDestination} → {inbound.arrivalDestination} selected </>)}
+
 
   return (
       <>
-       <p>{title}</p>
+       <p>{title}{inbound.itineraries.length}</p>
         <ul className='search__results'>
-          {inbound.itineraries.map((flight) => (
-            <li key={flight.itinerary_id}>
-              <p> Departure from {inbound.departureDestination} at {flight.departureAt}</p>
-              <p> Arriving in {inbound.arrivalDestination} at {flight.arriveAt} </p>
-              <p> Trip duration: {calculateTime(flight.departureAt, flight.arriveAt)} hours</p>
-              <p> Price per adult: {flight.prices[0].adult} {flight.prices[0].currency} </p>
-              <p> Seats available: {flight.avaliableSeats} </p>
-              { flight.avaliableSeats < 1 ? 
-                <Button color="gray" data-disabled> Sold out </Button> : 
-                <Button onClick={() => saveSelection(flight.itinerary_id)}> Select </Button>
-              }
-            </li>
+          {inbound.itineraries.map((flight: any) => (
+              <ResultsCard key={flight.itinerary_id} inbound={inbound} flight={flight} setSaved={setSaved} seats={seats}/>
           ))}
         </ul>
       </>
   );
 }
+
 
 export default Results;

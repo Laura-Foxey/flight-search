@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../CSS/Searchbar.css"
 import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
@@ -21,8 +21,8 @@ function Searchbar() {
   const [fetched, setFetched] = useState<[] | any>([]);
   const [twoFetched, setTwoFetched] = useState<[] | any>([])
   const [saved, setSaved] = useState<string[] | any>([])
+  const [loading, setLoading] =useState(false);
   const navigate = useNavigate();
-
 
   const values = [
     {
@@ -39,6 +39,7 @@ function Searchbar() {
     },
   ];
 
+  //labels for price range
   const marks = [
     { value: 0, label: 'SEK0' },
     { value: 5000, label: 'SEK5000' },
@@ -52,6 +53,7 @@ function Searchbar() {
     return ;
   }
 
+  //checks values of search
   const checkValues = () => {
     if (ret === 'return' && to && from && destination && origin) {
       return true
@@ -62,6 +64,7 @@ function Searchbar() {
     return false;
   }
 
+  //check to see if values are completed before fetching data
   const search = () => {
     if (!checkValues()) {
       setError(true);
@@ -71,22 +74,60 @@ function Searchbar() {
     }
       if (to) {
         console.log(new Date(to).toISOString().slice(0, 10));
+      setLoading(true);
       fetch(`https://localhost:7277/flights?departure=${origin}&destination=${destination}&date=${new Date(to).toISOString().slice(0, 10)}`)
       .then(res => res.json())
-      .then(data => setFetched(data))
+      .then(data => 
+          setFetched(data))
+      .then(() => setLoading(false))
       .catch((error) =>
         console.log('fetchToken error: ', error)) }
       if (ret === 'return' && from) {
+        setLoading(true);
         fetch(`https://localhost:7277/flights?departure=${destination}&destination=${origin}&date=${new Date(from).toISOString().slice(0, 10)}`)
         .then(res => res.json())
-        .then(data => setTwoFetched(data))
+        .then(data => 
+            setTwoFetched(data)
+        )
+        .then(() => setLoading(false))
         .catch((error) => console.log('fetchToken error: ', error))
   }
   setError(false);
 }
 
-console.log(fetched)
-console.log(twoFetched)
+console.log(saved)
+
+//have fetched data reset if user changes search values
+useEffect(() => {
+  setFetched([]);
+  setTwoFetched([]);
+  setSaved([]);
+}, [to, from, ret, origin, destination, adults, children, price, error])
+
+
+const ResultDisplay = () => {
+  if (loading) return (<p> Searching flights...</p>)
+  return (
+    <div>
+        {fetched.status || fetched === 'notFound' ? 
+        <>
+          <p>Inbound flights: </p>
+          <p>No results found</p>
+        </> : 
+        <Results inbound={fetched} title={'Results towards destination: '} saved={saved} setSaved={setSaved} seats={adults + children} limit={1}/>
+        }
+        {(twoFetched.status || twoFetched === 'notFound') && ret === "return" ? 
+                <>
+                <p>Outbound flights: </p>
+                <p>No results found</p>
+              </> :  
+        <Results inbound={twoFetched} title={'Results back home: '} saved={saved} setSaved={setSaved} seats={adults + children} limit={2}/>}
+
+        {saved.length === 1 && ret === 'oneway' && <Button onClick={() => navigate(`/book?flight=${saved[0]}&return=0&adults=${adults}&children=${children}`)} > Review & Book </Button>}
+        {saved.length >= 1 && ret === 'return' && <Button onClick={() => navigate(`/book?flight=${saved[0]}&return=${saved[1]}&adults=${adults}&children=${children}`)}> Review & Book </Button>}
+      </div>
+  )
+}
 
 return (
   <MantineProvider
@@ -148,23 +189,7 @@ return (
         <Button color="grape" radius="md" size="lg" onClick={() => search()}> Submit </Button>
       </div>
     
-      <div>
-        {fetched.status ? 
-        <>
-          <p>Inbound flights: </p>
-          <p>No results found</p>
-        </> : 
-        <Results inbound={fetched} title={'Results towards destination: '} setSaved={setSaved}/>}
-        {twoFetched.status && ret === "return" ? 
-                <>
-                <p>Outbound flights: </p>
-                <p>No results found</p>
-              </> :  
-        <Results inbound={twoFetched} title={'Results back home: '} setSaved={setSaved}/>}
-
-        {saved.length === 1 && ret === 'oneway' && <Button onClick={() => navigate(`/book?flight=${saved[0]}&return=0&adults=${adults}&children=${children}`)} > Review & Book </Button>}
-        {saved.length >= 1 && ret === 'return' && <Button onClick={() => navigate(`/book?flight=${saved[0]}&return=${saved[1]}&adults=${adults}&children=${children}`)}> Review & Book </Button>}
-      </div>
+      <ResultDisplay />
     </div>
 
   </MantineProvider>

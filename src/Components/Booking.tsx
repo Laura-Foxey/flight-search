@@ -72,6 +72,7 @@ function Booking() {
     setError("Please fill out all values."); 
   }
 
+  //calculate price of tickets
   const calculateTotal = () => {
     const adultPrice = trip[0].data.itineraries[0].prices[0].adult;
     const childPrice = trip[0].data.itineraries[0].prices[0].child;

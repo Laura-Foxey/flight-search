@@ -2,6 +2,11 @@ using flight_search.API.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.ConfigureKestrel(c =>
+{
+   c.Limits.KeepAliveTimeout = TimeSpan.FromMilliseconds(3000);
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
