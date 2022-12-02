@@ -2,10 +2,16 @@
 
 This project was created with [Create React App](https://github.com/facebook/create-react-app).
 
-Navigate into `./flight-search.API` and type `dotnet restore` into the terminal to restore dependencies.
-To run the API, type `dotnet run` and allow the terminal to run.
+Navigate into `./flight-search.API` and type 
 
-In the main project directory, open another terminal window and install all dependencies using:
+### `dotnet restore`
+into the terminal to restore dependencies.
+
+To run the API, type 
+### `dotnet run`
+and allow the terminal to run in order for the front-end to communicate with the back-end.
+
+In the main project directory (cd..), open another terminal window and install all dependencies using:
 ### `npm i` 
 
 After the lenghty installation is done, type in: 
