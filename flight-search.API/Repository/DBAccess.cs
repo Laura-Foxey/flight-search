@@ -29,20 +29,11 @@ namespace flight_search.API.Repository
 
         public Flights? GetByID(int id)
         {
-            var flight = new Flights();
-            var itinerary = new Itineraries();
-            if (flights == null) return null;
-            foreach(var f in flights)
-            {
-                itinerary = f.itineraries.FirstOrDefault(x => x.itinerary_id == id);
-                if (itinerary != null) {
-                    flight = f;
-                    break ;
-                }
-            }
-            if (itinerary == null) return null;
-            flight.itineraries = new List<Itineraries>{itinerary};
-            return flight;
+            var flight = flights?.FirstOrDefault(x => x.itineraries.Any(y => y.itinerary_id == id));
+            if (flight == null) return null;
+            var copy = flight.Clone();
+            copy.itineraries = copy.itineraries.Where(y => y.itinerary_id == id).ToList();
+            return copy;
         }
 
         public bool ReserveSeats(string departure, string destination, int id, int passangers)

@@ -21,10 +21,12 @@ interface Props {
     }[]
   }
   title: string,
+  setSaved: any
 
 }
 
-function Results({inbound, title}: Props) {
+function Results({inbound, title, setSaved}: Props) {
+  const [close, setClose] = useState(false);
 
     //caculates hours it takes for flight 
   const calculateTime = (dt1: Date, dt2: Date) => {
@@ -37,15 +39,18 @@ function Results({inbound, title}: Props) {
   const saveSelection = (id: number) => {
     const saved = inbound.itineraries.find(x => x.itinerary_id === id);
     if(saved) {
-      // setSaved((prev: string[]) => [...prev, saved.itinerary_id.toString()])
+      setSaved((prev: any) => [...prev, saved.itinerary_id.toString()])
+      setClose(true);
     }
   }
 
   if (!inbound.itineraries) { return (<></>)}
 
+  if(close) {return (<> Flight selected </>)}
+
   return (
       <>
-      <p>{title}</p>
+       <p>{title}</p>
         <ul className='search__results'>
           {inbound.itineraries.map((flight) => (
             <li key={flight.itinerary_id}>

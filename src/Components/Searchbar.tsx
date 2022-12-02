@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../CSS/Searchbar.css"
 import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
 import LiveSearch from "./LiveSearch";
@@ -19,7 +20,8 @@ function Searchbar() {
   const [error, setError] = useState(false);
   const [fetched, setFetched] = useState<[] | any>([]);
   const [twoFetched, setTwoFetched] = useState<[] | any>([])
-  const [saved, setSaved] = useState<string[]>([])
+  const [saved, setSaved] = useState<string[] | any>([])
+  const navigate = useNavigate();
 
 
   const values = [
@@ -147,10 +149,21 @@ return (
       </div>
     
       <div>
-        {fetched.status ? <p>No results found</p> : <Results inbound={fetched} title={'Results towards destination: '} />}
-        {twoFetched.status && ret === "return" ? <p>No return results found</p> : <Results inbound={twoFetched} title={'Results back home: '} />}
-        {saved.length > 2 && <Button> Review & Book </Button>}
-        {saved.length > 1 && ret === 'return' && <Button> Review & Book </Button>}
+        {fetched.status ? 
+        <>
+          <p>Inbound flights: </p>
+          <p>No results found</p>
+        </> : 
+        <Results inbound={fetched} title={'Results towards destination: '} setSaved={setSaved}/>}
+        {twoFetched.status && ret === "return" ? 
+                <>
+                <p>Outbound flights: </p>
+                <p>No results found</p>
+              </> :  
+        <Results inbound={twoFetched} title={'Results back home: '} setSaved={setSaved}/>}
+
+        {saved.length === 1 && ret === 'oneway' && <Button onClick={() => navigate(`/book?flight=${saved[0]}&return=0&adults=${adults}&children=${children}`)} > Review & Book </Button>}
+        {saved.length >= 1 && ret === 'return' && <Button onClick={() => navigate(`/book?flight=${saved[0]}&return=${saved[1]}&adults=${adults}&children=${children}`)}> Review & Book </Button>}
       </div>
     </div>
 

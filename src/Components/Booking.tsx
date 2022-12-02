@@ -14,9 +14,11 @@ function Booking() {
   const [notChild, setnotChild] = useState(false);
   const [checked, setChecked] = useState(false);
   const [error, setError] =useState('');
+  const [trip, setTrip] = useState<any>([]);
+  const [showReview, setShowReview] = useState(false);
   const navigate = useNavigate();
 
-  //book?to=id&from=id&adults=1&children=1
+  //example : http://localhost:3000/book?flight=5&return=12&adults=1&children=1
   const to = searchParams.get('flight');
   const from = searchParams.get('return');
   const adults = searchParams.get('adults');
@@ -26,8 +28,19 @@ function Booking() {
   if(adults && children) {totalPassengers = parseInt(adults) + parseInt(children)}
 
   useEffect(() => {
-    
-  }, [])
+    if (to) {
+    fetch(`https://localhost:7277/flights/itinerary/${to}`)
+    .then(res => res.json())
+    .then(data => setTrip((prev: any) => [...prev, {data}]))
+    }
+    if (from !== '0') {
+      fetch(`https://localhost:7277/flights/itinerary/${from}`)
+      .then(res => res.json())
+      .then(data => setTrip((prev: any) => [...prev, {data}]))
+      }
+  }, [to, from])
+
+  console.log(trip);
 
   const addPassenger = (e: any) => {
     e.preventDefault();
@@ -59,20 +72,62 @@ function Booking() {
     setError("Please fill out all values."); 
   }
 
+  const calculateTotal = () => {
+    const adultPrice = trip[0].data.itineraries[0].prices[0].adult;
+    const childPrice = trip[0].data.itineraries[0].prices[0].child;
+    var total = 0;
+    if(adults && children)
+      {
+        total = (adultPrice * parseInt(adults)) + (childPrice * parseInt(children))
+      
+      if (from && trip[1]) {
+        const adultPrice2 = trip[1].data.itineraries[0].prices[0].adult;
+        const childPrice2 = trip[1].data.itineraries[0].prices[0].child;
+        total = total + (adultPrice2 * parseInt(adults)) + (childPrice2 * parseInt(children))
+      }
+    return total;
+    }
+  }
+
+const Review = () => {
+  return (
+    <>
+    <section>
+      <p> Inbound flight: </p>
+      <p> Leaving {trip[0].data.departureDestination} at {trip[0].data.itineraries[0].departureAt}</p>
+      <p> Arriving {trip[0].data.arrivalDestination} at {trip[0].data.itineraries[0].arriveAt}</p>
+      <p> Flight ID: {trip[0].data.flight_id}</p>
+    </section>
+    {trip.length >= 2 && <section>
+      <p> Outbound flight: </p>
+      <p> Leaving {trip[1].data.departureDestination} at {trip[1].data.itineraries[0].departureAt}</p>
+      <p> Arriving {trip[1].data.arrivalDestination} at {trip[1].data.itineraries[0].arriveAt}</p>
+      <p> Flight ID: {trip[1].data.flight_id}</p>
+    </section>}
+    <section>
+      <p> Passengers information: </p>
+      <ul>
+        {passengers.map((passenger) => 
+        <li key={passenger.id}>
+          <p>{passenger.name}</p>
+          <p>{passenger.email}</p>
+          <p>{passenger.nationality}</p>
+        </li>)}
+      </ul>
+    </section>
+    <p> Total amount owed: {calculateTotal()}</p>
+    <Button> Pay </Button>
+    </>
+  )
+}
+
+if (!to && !from && !adults && !children) {
+  navigate("/")
+}
+
   return (
     <div className="booking-form">
-      <section>
-        <ul>
-          {passengers.map((passenger) => 
-          <li key={passenger.id}>
-            <p>{passenger.name}</p>
-            <p>{passenger.email}</p>
-            <p>{passenger.nationality}</p>
-          </li>)}
-        </ul>
-      </section>
-
-      <div>
+      {passengers.length < totalPassengers && <div>
         <p> Add passenger {number} of {totalPassengers}</p>
         <p style={{color: 'red'}}>{error}</p>
         <form className="booking-form__form" onSubmit={addPassenger}>
@@ -107,8 +162,9 @@ function Booking() {
 
           <Button type="submit"> Add passenger </Button>
         </form>
-        {passengers.length === 5 && <Button> Review booking</Button>}
-        </div>
+      </div>}
+      {passengers.length === totalPassengers && !showReview && <Button onClick={() => setShowReview(true)}> Review booking</Button>}
+      {showReview && <Review />}
     </div>
   );
 }
