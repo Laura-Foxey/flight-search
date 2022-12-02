@@ -34,9 +34,9 @@ function Results({inbound, title, saved, setSaved, seats, limit}: Props) {
   if (!inbound.itineraries) { return (<></>)}
 
   if (saved.length >= limit) {return (
-    <> 
+    <div className="review" > 
       <p>Flight {inbound.departureDestination} → {inbound.arrivalDestination} selected</p> 
-    </>)}
+    </div>)}
 
 
   return (

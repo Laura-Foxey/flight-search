@@ -25,8 +25,10 @@ function Booking() {
   const children = searchParams.get('children');
   let totalPassengers = 0;
 
+  //calculate total passangers
   if(adults && children) {totalPassengers = parseInt(adults) + parseInt(children)}
 
+  //fetch flight data
   useEffect(() => {
     if (to) {
     fetch(`https://localhost:7277/flights/itinerary/${to}`)
@@ -39,8 +41,6 @@ function Booking() {
       .then(data => setTrip((prev: any) => [...prev, {data}]))
       }
   }, [to, from])
-
-  console.log(trip);
 
   const addPassenger = (e: any) => {
     e.preventDefault();
@@ -90,41 +90,44 @@ function Booking() {
     }
   }
 
-const Review = () => {
-  return (
-    <>
-    <section>
-      <p> Inbound flight: </p>
-      <p> Leaving {trip[0].data.departureDestination} at {trip[0].data.itineraries[0].departureAt}</p>
-      <p> Arriving {trip[0].data.arrivalDestination} at {trip[0].data.itineraries[0].arriveAt}</p>
-      <p> Flight ID: {trip[0].data.flight_id}</p>
-    </section>
-    {trip.length >= 2 && <section>
-      <p> Outbound flight: </p>
-      <p> Leaving {trip[1].data.departureDestination} at {trip[1].data.itineraries[0].departureAt}</p>
-      <p> Arriving {trip[1].data.arrivalDestination} at {trip[1].data.itineraries[0].arriveAt}</p>
-      <p> Flight ID: {trip[1].data.flight_id}</p>
-    </section>}
-    <section>
-      <p> Passengers information: </p>
-      <ul>
-        {passengers.map((passenger) => 
-        <li key={passenger.id}>
-          <p>{passenger.name}</p>
-          <p>{passenger.email}</p>
-          <p>{passenger.nationality}</p>
-        </li>)}
-      </ul>
-    </section>
-    <p> Total amount owed: {calculateTotal()}</p>
-    <Button> Pay </Button>
-    </>
-  )
-}
+  if (!to || !from || !adults || !children) {
+    navigate("/") }
 
-if (!to && !from && !adults && !children) {
-  navigate("/")
-}
+  if(!trip) {
+    return (<p> Something went wrong.</p>)}
+  
+  const Review = () => {
+    return (
+      <>
+      <section>
+        <p> Inbound flight: </p>
+        <p> Leaving {trip[0].data.departureDestination} at {trip[0].data.itineraries[0].departureAt}</p>
+        <p> Arriving {trip[0].data.arrivalDestination} at {trip[0].data.itineraries[0].arriveAt}</p>
+        <p> Flight ID: {trip[0].data.flight_id}</p>
+      </section>
+      {trip.length >= 2 && <section>
+        <p> Outbound flight: </p>
+        <p> Leaving {trip[1].data.departureDestination} at {trip[1].data.itineraries[0].departureAt}</p>
+        <p> Arriving {trip[1].data.arrivalDestination} at {trip[1].data.itineraries[0].arriveAt}</p>
+        <p> Flight ID: {trip[1].data.flight_id}</p>
+      </section>}
+      <section>
+        <p> Passengers information: </p>
+        <ul>
+          {passengers.map((passenger) => 
+          <li key={passenger.id}>
+            <p>{passenger.name}</p>
+            <p>{passenger.email}</p>
+            <p>{passenger.nationality}</p>
+          </li>)}
+        </ul>
+      </section>
+      <p> Total amount owed: {calculateTotal()}</p>
+      <Button> Finish booking </Button>
+      </>
+    )
+  }
+
 
   return (
     <div className="booking-form">
