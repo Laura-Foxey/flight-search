@@ -95,7 +95,8 @@ function Booking() {
   //finish booking
   const finish = () => {
     if(to && trip[0]) {
-      if(trip[0].data.itineraries[0].avaliableSeats >= totalPassengers){
+      if(trip[0].data.itineraries[0].avaliableSeats < totalPassengers)
+      {navigate("/error")}
       fetch(`https://localhost:7277/flights/${trip[0].data.itineraries[0].itinerary_id}?departure=${trip[0].data.departureDestination}&destination=${trip[0].data.arrivalDestination}&passangers=${totalPassengers}`, {
         method: 'PATCH',
         body: JSON.stringify({
@@ -109,25 +110,24 @@ function Booking() {
         },
       })
       .catch(e => console.log('What happened??' + e))
-      }
       if(from && trip[1]) {
-        if(trip[1].data.itineraries[0].avaliableSeats >= totalPassengers){
-          fetch(`https://localhost:7277/flights/${trip[1].data.itineraries[0].itinerary_id}?departure=${trip[1].data.departureDestination}&destination=${trip[1].data.arrivalDestination}&passangers=${totalPassengers}`, {
-            method: 'PATCH',
-            body: JSON.stringify({
-              departure: trip[1].data.departureDestination,
-              destination: trip[1].data.arrivalDestination,
-              passangers: totalPassengers,
-              id: trip[1].data.itineraries[0]
-            }),
-            headers: {
-              'Content-type': 'application/json; charset=UTF-8',
-            },
-          })
-            .catch(e => console.log('What happened??' + e))
-          }
+        if(trip[1].data.itineraries[0].avaliableSeats < totalPassengers)
+        { navigate("/error") }
+        fetch(`https://localhost:7277/flights/${trip[1].data.itineraries[0].itinerary_id}?departure=${trip[1].data.departureDestination}&destination=${trip[1].data.arrivalDestination}&passangers=${totalPassengers}`, {
+          method: 'PATCH',
+          body: JSON.stringify({
+            departure: trip[1].data.departureDestination,
+            destination: trip[1].data.arrivalDestination,
+            passangers: totalPassengers,
+            id: trip[1].data.itineraries[0]
+          }),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        })
+          .catch(e => console.log('What happened??' + e))
         }
-      }
+        }
     navigate("/");
   }
 

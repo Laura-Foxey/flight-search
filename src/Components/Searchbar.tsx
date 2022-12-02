@@ -118,14 +118,14 @@ const ResultDisplay = () => {
           <p>Inbound flights: </p>
           <p>No results found :/ </p>
         </div> : 
-        <Results inbound={fetched} title={'Results towards destination: '} saved={saved} setSaved={setSaved} seats={adults + children} limit={1}/>
+        <Results inbound={fetched} title={'Results towards destination: '} saved={saved} setSaved={setSaved} seats={adults + children} limit={1} price={price}/>
         }
         {(twoFetched.status || twoFetched === 'notFound') && ret === "return" ? 
           <div className="no-results">
             <p>Outbound flights: </p>
             <p>No results found :/ </p>
           </div> :  
-        <Results inbound={twoFetched} title={'Results back home: '} saved={saved} setSaved={setSaved} seats={adults + children} limit={2}/>}
+        <Results inbound={twoFetched} title={'Results back home: '} saved={saved} setSaved={setSaved} seats={adults + children} limit={2} price={price}/>}
 
         {saved.length === 1 && ret === 'oneway' && <Button onClick={() => navigate(`/book?flight=${saved[0]}&return=0&adults=${adults}&children=${children}`)} > Review & Book </Button>}
         {saved.length > 1 && ret === 'return' && <Button onClick={() => navigate(`/book?flight=${saved[0]}&return=${saved[1]}&adults=${adults}&children=${children}`)}> Review & Book </Button>}

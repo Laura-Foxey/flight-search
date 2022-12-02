@@ -4,7 +4,7 @@ import "../CSS/App.css"
 function Error() {
   return (
       <>
-        <p> Something went wrong!</p>
+        <p> Uhoh. Something went wrong!</p>
       </>
   );
 }

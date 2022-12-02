@@ -23,9 +23,10 @@ interface Props {
   },
   setSaved: any,
   seats: number,
+  price: number[]
 }
 
-function ResultsCard({inbound, flight, setSaved, seats}: Props) {
+function ResultsCard({inbound, flight, setSaved, seats, price}: Props) {
   const [expanded, setExpanded] = useState(false);
 
     //caculates hours it takes for flight 
@@ -37,6 +38,10 @@ function ResultsCard({inbound, flight, setSaved, seats}: Props) {
 
   const saveSelection = () => {
       setSaved((prev: any) => [...prev, flight.itinerary_id.toString()])
+  }
+
+  if (flight.prices[0].adult <= price[0] || flight.prices[0].adult >= price[1]) {
+    return (<></>)
   }
 
   return (

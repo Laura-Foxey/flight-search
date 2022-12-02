@@ -23,10 +23,11 @@ interface Props {
   saved: string[],
   setSaved: any,
   seats: number,
-  limit: number
+  limit: number,
+  price: number[]
 }
 
-function Results({inbound, title, saved, setSaved, seats, limit}: Props) {
+function Results({inbound, title, saved, setSaved, seats, limit, price}: Props) {
 
   if (!inbound.itineraries) { return (<></>)}
 
@@ -37,10 +38,10 @@ function Results({inbound, title, saved, setSaved, seats, limit}: Props) {
 
   return (
       <>
-       <p>{title}{inbound.itineraries.length}</p>
+       <p>{title}</p>
         <ul className='search__results'>
           {inbound.itineraries.map((flight: any) => (
-              <ResultsCard key={flight.itinerary_id} inbound={inbound} flight={flight} setSaved={setSaved} seats={seats}/>
+              <ResultsCard key={flight.itinerary_id} inbound={inbound} flight={flight} setSaved={setSaved} seats={seats} price={price}/>
           ))}
         </ul>
       </>
