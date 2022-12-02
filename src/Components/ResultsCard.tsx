@@ -1,4 +1,4 @@
-import React, {useState, SetStateAction, Dispatch} from 'react';
+import React, {useState} from 'react';
 
 import "../CSS/Results.css"
 import { Button} from '@mantine/core';

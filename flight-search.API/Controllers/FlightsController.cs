@@ -22,6 +22,7 @@ public class FlightsController : ControllerBase
     public IActionResult GetByParams(string departure, string destination, DateTime date)
     {
         var flight = _access.GetFlight(departure, destination, date);
+        Thread.Sleep(5000);
         if (flight == null) return NotFound();
         return Ok(flight);
     }

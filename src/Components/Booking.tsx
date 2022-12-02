@@ -16,7 +16,6 @@ function Booking() {
   const [error, setError] =useState('');
   const [trip, setTrip] = useState<any>([]);
   const [showReview, setShowReview] = useState(false);
-  const [response, setResponse] = useState<any>([])
   const navigate = useNavigate();
 
   //example : http://localhost:3000/book?flight=5&return=12&adults=1&children=1
