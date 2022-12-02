@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Searchbar";
-import { Input } from '@mantine/core';
-
+import { Input } from "@mantine/core";
 
 interface Props {
   placeholder: string;
@@ -19,7 +18,7 @@ function LiveSearch({ placeholder, data, datavalue, setValue }: Props) {
   };
 
   return (
-    <div className="search__box__input" >
+    <div className="search__box__input">
       <Input
         type="text"
         placeholder={placeholder}

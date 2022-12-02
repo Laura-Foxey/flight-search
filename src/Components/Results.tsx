@@ -1,7 +1,4 @@
-import React, {useState, useEffect} from 'react';
-
 import "../CSS/Results.css"
-import { Button} from '@mantine/core';
 import ResultsCard from './ResultsCard'
 
 interface Props {
@@ -38,7 +35,6 @@ function Results({inbound, title, saved, setSaved, seats, limit}: Props) {
       <p>Flight {inbound.departureDestination} → {inbound.arrivalDestination} selected</p> 
     </div>)}
 
-
   return (
       <>
        <p>{title}{inbound.itineraries.length}</p>
@@ -50,6 +46,5 @@ function Results({inbound, title, saved, setSaved, seats, limit}: Props) {
       </>
   );
 }
-
 
 export default Results;

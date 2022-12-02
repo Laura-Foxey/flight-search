@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import '../CSS/Booking.css';
 import { Input, NativeSelect, Switch, Button, Checkbox} from '@mantine/core';
 import { useNavigate } from "react-router-dom";
@@ -16,6 +16,7 @@ function Booking() {
   const [error, setError] =useState('');
   const [trip, setTrip] = useState<any>([]);
   const [showReview, setShowReview] = useState(false);
+  const [response, setResponse] = useState<any>([])
   const navigate = useNavigate();
 
   //example : http://localhost:3000/book?flight=5&return=12&adults=1&children=1
@@ -29,19 +30,22 @@ function Booking() {
   if(adults && children) {totalPassengers = parseInt(adults) + parseInt(children)}
 
   //fetch flight data
-  useEffect(() => {
+  useMemo(() => {
     if (to) {
     fetch(`https://localhost:7277/flights/itinerary/${to}`)
     .then(res => res.json())
     .then(data => setTrip((prev: any) => [...prev, {data}]))
+    .catch(e => console.log(e))
     }
     if (from !== '0') {
       fetch(`https://localhost:7277/flights/itinerary/${from}`)
       .then(res => res.json())
       .then(data => setTrip((prev: any) => [...prev, {data}]))
+      .catch(e => console.log(e))
       }
   }, [to, from])
 
+  //form submit
   const addPassenger = (e: any) => {
     e.preventDefault();
     if (name && email && nationality) {
@@ -72,7 +76,7 @@ function Booking() {
     setError("Please fill out all values."); 
   }
 
-  //calculate price of tickets
+  //calculate total price of tickets
   const calculateTotal = () => {
     const adultPrice = trip[0].data.itineraries[0].prices[0].adult;
     const childPrice = trip[0].data.itineraries[0].prices[0].child;
@@ -80,7 +84,6 @@ function Booking() {
     if(adults && children)
       {
         total = (adultPrice * parseInt(adults)) + (childPrice * parseInt(children))
-      
       if (from && trip[1]) {
         const adultPrice2 = trip[1].data.itineraries[0].prices[0].adult;
         const childPrice2 = trip[1].data.itineraries[0].prices[0].child;
@@ -90,11 +93,44 @@ function Booking() {
     }
   }
 
+  //finish booking
+  const finish = () => {
+    if(to && trip[0]) {
+      fetch(`https://localhost:7277/flights/${trip[0].data.itineraries[0].itinerary_id}?departure=${trip[0].data.departureDestination}&destination=${trip[0].data.arrivalDestination}&passangers=${totalPassengers}`, {
+        method: 'PATCH',
+        body: JSON.stringify({
+          departure: trip[0].data.departureDestination,
+          destination: trip[0].data.arrivalDestination,
+          passangers: totalPassengers,
+          id: trip[0].data.itineraries[0]
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+      .catch(e => console.log('What happened??' + e))
+      if(from && trip[1]) {
+        fetch(`https://localhost:7277/flights/${trip[1].data.itineraries[0].itinerary_id}?departure=${trip[1].data.departureDestination}&destination=${trip[1].data.arrivalDestination}&passangers=${totalPassengers}`, {
+          method: 'PATCH',
+          body: JSON.stringify({
+            departure: trip[1].data.departureDestination,
+            destination: trip[1].data.arrivalDestination,
+            passangers: totalPassengers,
+            id: trip[1].data.itineraries[0]
+          }),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        })
+          .catch(e => console.log('What happened??' + e))
+      }
+    }
+    
+    navigate("/");
+  }
+
   if (!to || !from || !adults || !children) {
     navigate("/") }
-
-  if(!trip) {
-    return (<p> Something went wrong.</p>)}
   
   const Review = () => {
     return (
@@ -105,7 +141,7 @@ function Booking() {
         <p> Arriving {trip[0].data.arrivalDestination} at {trip[0].data.itineraries[0].arriveAt}</p>
         <p> Flight ID: {trip[0].data.flight_id}</p>
       </section>
-      {trip.length >= 2 && <section>
+      {trip.length === 2 && <section>
         <p> Outbound flight: </p>
         <p> Leaving {trip[1].data.departureDestination} at {trip[1].data.itineraries[0].departureAt}</p>
         <p> Arriving {trip[1].data.arrivalDestination} at {trip[1].data.itineraries[0].arriveAt}</p>
@@ -116,18 +152,20 @@ function Booking() {
         <ul>
           {passengers.map((passenger) => 
           <li key={passenger.id}>
-            <p>{passenger.name}</p>
+            <p>{passenger.id}.{passenger.name}</p>
             <p>{passenger.email}</p>
             <p>{passenger.nationality}</p>
           </li>)}
         </ul>
       </section>
       <p> Total amount owed: {calculateTotal()}</p>
-      <Button> Finish booking </Button>
+      <Button onClick={() => finish()}> Finish booking </Button>
       </>
     )
   }
 
+  if(!trip) {
+    return (<p> Something went wrong.</p>)}
 
   return (
     <div className="booking-form">

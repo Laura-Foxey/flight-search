@@ -8,7 +8,7 @@
         "itinerary_id": 1,
         "departureAt": "2022-12-12T12:30:00",
         "arriveAt": "2022-12-12T13:30:00",
-        "avaliableSeats": 2,
+        "avaliableSeats": 0,
         "prices": [
           {
             "currency": "SEK",
@@ -353,7 +353,7 @@
         "itinerary_id": 27,
         "departureAt": "2022-12-12T11:00:00",
         "arriveAt": "2022-12-12T12:00:00",
-        "avaliableSeats": 5,
+        "avaliableSeats": 0,
         "prices": [
           {
             "currency": "SEK",
@@ -405,7 +405,7 @@
         "itinerary_id": 31,
         "departureAt": "2022-12-13T14:00:00",
         "arriveAt": "2022-12-13T15:00:00",
-        "avaliableSeats": 2,
+        "avaliableSeats": 10,
         "prices": [
           {
             "currency": "SEK",

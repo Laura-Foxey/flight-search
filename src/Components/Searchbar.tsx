@@ -93,6 +93,7 @@ function Searchbar() {
         }, 3000);
   }
   setError(false);
+  setSaved([]);
 }
 
 //have fetched data reset if user changes search values
@@ -101,8 +102,6 @@ useEffect(() => {
   setTwoFetched([]);
   setSaved([]);
 }, [to, from, ret, origin, destination, adults, children, price, error])
-
-
 
 
 const ResultDisplay = () => {
